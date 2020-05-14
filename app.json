@@ -1,0 +1,12 @@
+{
+    "startup_app": {
+        "url": "https://ottah.github.io/tapestry",
+        "name": "main",
+        "uuid": "themetool",
+        "autoShow": true,
+        "frame": false
+    },
+    "runtime": {
+        "version": "stable"
+    }
+}
