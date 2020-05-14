@@ -1,0 +1,35 @@
+.editor{
+    color: var(--color-foreground);
+    padding: 10px;
+}
+
+.output {
+    padding: 5px;
+    display: block;
+    flex: 1;
+    max-height: 300px;
+    height: 300px;
+    width: 100%;
+}
+
+.color-view {
+    display: flex;
+    flex-direction:row;
+    flex: 1;
+    width: 100%;
+    margin: 10px 0;
+    align-items: center;
+    align-content: space-between;
+    min-height: 30px;
+
+    .key {
+        font-weight: 600;
+        cursor: pointer;
+        min-width: 200px;
+    }
+
+    input {
+        display: inline-flex;
+        width: 100%;
+    }
+}

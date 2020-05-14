@@ -1,0 +1,11 @@
+{
+    "startup_app": {
+        "url": "http://localhost:3000/",
+        "name":  "main",
+        "uuid": "themetool",
+        "autoShow": true
+    },
+    "runtime": {
+        "version": "stable"
+    }
+}
