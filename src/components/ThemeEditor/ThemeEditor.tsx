@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {Theme, initializeThemeSelector, defaultTheme, Button, setTheme} from '@openfin/desktop-ui';
-import {SketchPicker} from 'react-color';
 
 import Styles from './ThemeEditor.module.scss';
 
@@ -19,19 +18,11 @@ export const ThemeEditor: React.FC<Theme> = (props) => {
     const handleTextUpdate = (color: Color) => {
         setEditorTheme({
             ...editorTheme,
-            text: {
-                // @ts-ignore
-                ...editorTheme.text!,
-                [color.name]: {
-                    color: color.value
-                }
-            }
         } as Theme);
     }
 
     React.useEffect(() => {
-        if(autoUpdate)
-        {
+        if (autoUpdate) {
             setTheme(editorTheme);
         }
     }, [autoUpdate, editorTheme]);
@@ -46,25 +37,12 @@ export const ThemeEditor: React.FC<Theme> = (props) => {
             <Button onClick={() => setTheme(editorTheme)}>Set theme</Button>
             <Button onClick={() => setToggleOutput(!toggleOutput)}>JSON</Button>
             {toggleOutput && <textarea readOnly className={Styles['output']}
-            value={JSON.stringify(editorTheme, undefined, 3)} />}
+                value={JSON.stringify(editorTheme, undefined, 3)} />}
             {
                 defaultThemeColors.map(([name, value]) => {
                     return <ColorView key={name} {...{name, value}} onChange={handlePropertyUpdate} />
                 })
             }
-
-        {
-            // @ts-ignore
-            <ColorView name="primary" value={editorTheme.text.primary.color} onChange={handleTextUpdate} />}
-
-        {
-            // @ts-ignore
-            <ColorView name="secondary" value={editorTheme.text.primary.color} onChange={handleTextUpdate} />}
-
-        {
-            // @ts-ignore
-            <ColorView name="links" value={editorTheme.text.primary.color} onChange={handleTextUpdate} />}
-
         </div>
     );
 };
@@ -96,7 +74,7 @@ const ColorView: React.FC<ColorViewProps> = (props) => {
     return (
         <div className={Styles['color-view']}>
             <div className={Styles['key']} onClick={() => setMode(!mode)}>{name}</div>
-            <input onChange={handleChange} type={mode ? ColorMode.hex : ColorMode.text} value={value}/>
+            <input onChange={handleChange} type={mode ? ColorMode.hex : ColorMode.text} value={value} />
         </div>
     );
 };

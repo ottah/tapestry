@@ -1,0 +1,15 @@
+.header {
+    -webkit-app-region: drag;
+    height: 100%;
+}
+
+.app {
+    display: flex;
+    flex: 1;
+    height: 100vh;
+    flex-direction: column;
+}
+
+body {
+    height: 100vh;
+}

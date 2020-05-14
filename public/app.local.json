@@ -1,6 +1,6 @@
 {
     "startup_app": {
-        "url": "https://ottah.github.io/tapestry",
+        "url": "http://localhost:3000/",
         "name": "main",
         "uuid": "themetool",
         "autoShow": true,
