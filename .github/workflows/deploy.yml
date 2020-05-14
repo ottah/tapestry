@@ -1,4 +1,4 @@
-name: Deploy Storybook to GH Pages
+name: Deploy to GH Pages
 
 on:
   push:
