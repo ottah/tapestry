@@ -1,0 +1,25 @@
+name: Deploy Storybook to GH Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Deploy Storybook ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install
+    - run: npm run deploy:gh-pages -- --repo "https://${{secrets.GH_PAGES_TOKEN}}@github.com/$GITHUB_REPOSITORY.git" -u "github-actions-bot <support+actions@github.com>"
+      env:
+        CI: true
